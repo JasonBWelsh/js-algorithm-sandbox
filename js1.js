@@ -19,29 +19,48 @@
 // }
 
 // Return max character in string (most common)
-function maxCharacter(str) {
-  const charMap = {};
-  let maxNum = 0;
-  let maxChar = '';
+// function maxCharacter(str) {
+//   const charMap = {};
+//   let maxNum = 0;
+//   let maxChar = '';
 
-  str.split('').forEach(function(char) {
-    if(charMap[char]) {
-      charMap[char]++;
+//   str.split('').forEach(function(char) {
+//     if(charMap[char]) {
+//       charMap[char]++;
+//     } else {
+//       charMap[char] = 1;
+//     }
+//   });
+
+//   for(let char in charMap) {
+//     if(charMap[char] > maxNum) {
+//       maxNum = charMap[char];
+//       maxChar = char;
+//     }
+//   }
+
+//   return {[maxChar]: maxNum};
+// }
+
+
+
+// FIZZBUZZ
+function fizzBuzz() {
+  let i = 1;
+  while(i <= 100) {
+    if(i % 15 === 0) {
+      console.log('fizzBuzz');
+    } else if(i % 3 === 0) {
+      console.log('fizz');
+    } else if(i % 5 === 0) {
+       console.log('buzz');
     } else {
-      charMap[char] = 1;
+      console.log(i);
     }
-  });
-
-  for(let char in charMap) {
-    if(charMap[char] > maxNum) {
-      maxNum = charMap[char];
-      maxChar = char;
-    }
+    i++;
   }
-
-  return {[maxChar]: maxNum};
 }
 
-// test
+fizzBuzz();
 
-console.log("output\n", maxCharacter("verisimilitude"));
+// console.log("output\n", maxCharacter("verisimilitude"));

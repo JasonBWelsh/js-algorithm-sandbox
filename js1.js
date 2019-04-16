@@ -1,12 +1,12 @@
 // Reverse integer passed
 function reverseInt(int) {
-  return parseInt(
-    int
-      .toString()
-      .split("")
-      .reverse()
-      .join("")
-  );
+  const revString = int
+    .toString()
+    .split("")
+    .reverse()
+    .join("");
+
+  return parseInt(revString) * Math.sign(int);
 }
 
-console.log("output\n", reverseInt(125));
+console.log("output\n", reverseInt(-125));

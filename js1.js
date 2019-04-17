@@ -45,22 +45,32 @@
 
 
 // FIZZBUZZ
-function fizzBuzz() {
-  let i = 1;
-  while(i <= 100) {
-    if(i % 3 === 0 && i % 5 === 0) {
-      console.log('fizzBuzz');
-    } else if(i % 3 === 0) {
-      console.log('fizz');
-    } else if(i % 5 === 0) {
-       console.log('buzz');
-    } else {
-      console.log(i);
+// function fizzBuzz() {
+//   let i = 1;
+//   while(i <= 100) {
+//     if(i % 3 === 0 && i % 5 === 0) {
+//       console.log('fizzBuzz');
+//     } else if(i % 3 === 0) {
+//       console.log('fizz');
+//     } else if(i % 5 === 0) {
+//        console.log('buzz');
+//     } else {
+//       console.log(i);
+//     }
+//     i++;
+//   }
+// }
+
+// Find longest word 
+function longestWord(str) {
+  const strArr = str.replace(/[^\w\s]|_/g, "").split(' ');
+  const longest = strArr.reduce((prev, word) => {
+    if(word.length > prev.length) {
+      prev = word;
     }
-    i++;
-  }
+    return prev;
+  },'');
+  return longest;
 }
 
-fizzBuzz();
-
-// console.log("output\n", maxCharacter("verisimilitude"));
+console.log("output:::^~^~^~^~^~^~^~\n", longestWord("Which word is the longest?"));

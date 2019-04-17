@@ -62,12 +62,17 @@
 // }
 
 // Find longest word 
-function longestWord(sen) {
-  const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
-  const sorted = wordArr.sort((a, b) => b.length - a.length);
-  const longest = sorted.filter(word => word.length >= sorted[0].length);
+// function longestWord(sen) {
+//   const wordArr = sen.toLowerCase().match(/[a-z0-9]+/g);
+//   const sorted = wordArr.sort((a, b) => b.length - a.length);
+//   const longest = sorted.filter(word => word.length >= sorted[0].length);
 
-  return longest.length > 1 ? longest : longest[0];
+//   return longest.length > 1 ? longest : longest[0];
+// }
+
+// Flatten Array
+function flattenArray(arr) {
+  return arr.reduce((acc, i) => [...acc, ...i],[]);
 }
 
-console.log("output:::^~^~^~^~^~^~^~\n", longestWord("Which word,, is the longest?"));
+console.log("output:::^~^~^~^~^~^~^~\n", flattenArray([[1,2,3], [4,5,6], [7,8,9]]));

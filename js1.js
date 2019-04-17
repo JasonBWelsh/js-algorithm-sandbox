@@ -69,7 +69,7 @@ function longestWord(sen) {
   });
   const longest = sorted.filter(word => word.length >= sorted[0].length);
 
-  return longest;
+  return longest.length > 1 ? longest : longest[0];
 }
 
-console.log("output:::^~^~^~^~^~^~^~\n", longestWord("Which word,, wonders I, is the longest?"));
+console.log("output:::^~^~^~^~^~^~^~\n", longestWord("Which word,, is the longest?"));

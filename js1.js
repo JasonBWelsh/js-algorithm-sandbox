@@ -71,8 +71,15 @@
 // }
 
 // Flatten Array
-function flattenArray(arr) {
-  return arr.reduce((acc, i) => [...acc, ...i],[]);
+// function flattenArray(arr) {
+//   return arr.reduce((acc, i) => [...acc, ...i],[]);
+// }
+
+// Chunk Array 
+// pass in array and value to chunck by Ex: ([1,2,3,4,5,6,7], 2)
+// returns [[1,2], [3,4]...] etc.
+function chunkArray(arr) {
+  return arr;
 }
 
-console.log("output:::^~^~^~^~^~^~^~\n", flattenArray([[1,2,3], [4,5,6], [7,8,9]]));
+console.log("output:::^~^~^~^~^~^~^~\n", chunkArray([1,2,3,4,5,6,7,8,9]));

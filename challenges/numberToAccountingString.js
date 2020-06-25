@@ -4,7 +4,7 @@
 */
 
 function numberToAccountingString(number) {
-  if (number === null) return;
+  if (number == null) return;
   if (number >= 0) return number.toString();
   return `(${Math.abs(number)})`;
 }

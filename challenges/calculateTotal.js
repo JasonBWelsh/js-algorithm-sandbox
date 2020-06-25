@@ -10,24 +10,22 @@ const items = [
 const TAX_RATE = 1.15;
 const SHIPPING_DEFAULT = 5;
 
-function calculateTotal(items, options = {}) {
+function calculateTotal(
+  items,
+  { shippping = SHIPPING_DEFAULT, discount = 0 } = {}
+) {
   if (items == null || items.length === 0) return 0;
 
-  let total = items.reduce(
+  let subTotal = items.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  total = total - total * (options.discount || 0);
-  total = total * TAX_RATE;
+  const discountRate = 1 - discount;
 
-  if (options.shipping && options.shipping > 0) {
-    total = total + options.shipping;
-  } else {
-    total = total + SHIPPING_DEFAULT;
-  }
+  const total = subTotal * discountRate * TAX_RATE + shippping;
 
-  return Math.round(total);
+  return total.toFixed(2);
 }
 
 console.log(calculateTotal(items, { shipping: 10, discount: 0.1 }));

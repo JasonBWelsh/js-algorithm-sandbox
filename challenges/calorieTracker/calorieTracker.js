@@ -1,3 +1,10 @@
+// import { logger } from './logger.js';
+
+// temporay function definition
+function logger(message) {
+  console.log(message);
+}
+
 class CalorieTracker {
   constructor(maxCalories) {
     this.maxCalories = maxCalories;
@@ -6,20 +13,13 @@ class CalorieTracker {
 
   trackCalories(calorieCount) {
     this.currentCalories += calorieCount || 0;
-    if (this.currentCalories > this.maxCalories) {
-      this.logCalorieSurplus();
-    } else {
-      this.logCaloriesRemaining();
-    }
-  }
-
-  logCalorieSurplus() {
-    console.log('Max calories exceeded!');
-  }
-
-  logCaloriesRemaining() {
     const caloriesRemaining = this.maxCalories - this.currentCalories;
-    console.log(`You have ${caloriesRemaining} calories remaining.`);
+
+    if (this.currentCalories > this.maxCalories) {
+      logger('Max calories exceeded!');
+    } else {
+      logger(`You have ${caloriesRemaining} calories remaining.`);
+    }
   }
 }
 

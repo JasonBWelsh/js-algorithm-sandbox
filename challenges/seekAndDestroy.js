@@ -12,8 +12,8 @@
 
 // solution 2
 
-function destroyer(arr, ...targets) {
-  return arr.filter((num) => !targets.includes(num));
+function destroyer(arr, ...args) {
+  return arr.filter((val) => args.includes(val));
 }
 
 const targetArray = [1, 2, 1, 3, 1, 1, 3, 2];
